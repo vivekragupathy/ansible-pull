@@ -15,8 +15,6 @@
       ansible.builtin.include_tasks: tasks/users.yml
     - name: Includes the required packages
       ansible.builtin.include_tasks: tasks/packages.yml
-    - name: Includes crontab
-      ansible.builtin.include_tasks: tasks/crontab.yml
     - name: Touches a test file
       ansible.builtin.include_tasks: tasks/file.yml
     - name: PostgreSQL Client
