@@ -1,0 +1,27 @@
+{
+    "version": "0.2",
+    "ignorePaths": [],
+    "dictionaryDefinitions": [],
+    "dictionaries": [],
+    "words": [
+        "ansible",
+        "cpus",
+        "dnsutils",
+        "epmtt",
+        "fqcn",
+        "iputils",
+        "libpq",
+        "linux",
+        "noninteractive",
+        "NOPASSWD",
+        "pgadmin",
+        "pgdg",
+        "postgres",
+        "postgresql",
+        "venv",
+        "virtualbox",
+        "virtualenv"
+    ],
+    "ignoreWords": [],
+    "import": []
+}

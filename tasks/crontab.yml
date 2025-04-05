@@ -1,0 +1,8 @@
+- name: Ensure job runs every minute"
+  ansible.builtin.cron:
+    name: "check dirs"
+    minute: "*"
+    hour: "*"
+    # Wrapping since >> will run before the sudo
+    job: "sudo bash -c \"/usr/bin/flock -w 0 /opt/ansible/cron.lock /opt/ansible/pull.sh &>> /var/log/ansible-pull.log\""
+    user: ansible

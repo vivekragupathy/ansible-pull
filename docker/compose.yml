@@ -1,0 +1,9 @@
+services:
+  workstation:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ansible-workstation
+    hostname: workstation
+    stdin_open: true
+    tty: true

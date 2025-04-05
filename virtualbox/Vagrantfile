@@ -1,0 +1,25 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Looks like Canonical will no longer publish Ubuntu images for Vagrant.
+# References:
+# - https://askubuntu.com/a/1536464/1001717
+# - https://discourse.ubuntu.com/t/ubuntu-24-04-lts-noble-numbat-release-notes/39890
+# - https://bugs.launchpad.net/cloud-images/+bug/2065126
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/jammy64"
+
+  # I was having issues with 1GB so increasing to 2GB solved that for me
+  config.vm.provider :virtualbox do |vm|
+    vm.cpus = 2
+    vm.memory = 2048
+  end
+  
+  # Will install the required Ansible stuff on provisioning
+  config.vm.provision "shell", inline: <<-SHELL
+    apt update
+	  apt install software-properties-common
+	  add-apt-repository --yes --update ppa:ansible/ansible
+	  apt install -y ansible
+    SHELL
+end
