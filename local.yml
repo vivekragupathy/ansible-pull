@@ -17,7 +17,4 @@
       ansible.builtin.include_tasks: tasks/packages.yml
     - name: Touches a test file
       ansible.builtin.include_tasks: tasks/file.yml
-    - name: PostgreSQL Client
-      ansible.builtin.include_tasks: tasks/postgres-client.yml
-    - name: PostgreSQL PgAdmin
-      ansible.builtin.include_tasks: tasks/postgres-pgadmin.yml
+
